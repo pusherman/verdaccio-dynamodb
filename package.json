@@ -1,0 +1,48 @@
+{
+  "name": "verdaccio-dynamodb",
+  "version": "0.0.1",
+  "description": "Verdaccio DynamoDB Auth Plugin",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "dependencies": {
+    "@verdaccio/commons-api": "^8.5.0",
+    "aws-sdk": "^2.696.0",
+    "bcrypt": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.1",
+    "@types/jest": "^24.0.21",
+    "@types/node": "^12.12.5",
+    "@typescript-eslint/eslint-plugin": "^2.12.0",
+    "@verdaccio/babel-preset": "^8.5.0",
+    "@verdaccio/eslint-config": "^8.5.0",
+    "@verdaccio/types": "^8.5.2",
+    "eslint": "^6.6.0",
+    "jest": "^24.9.0",
+    "prettier": "^1.19.1",
+    "standard-version": "^7.0.0",
+    "typescript": "^3.7.2"
+  },
+  "keywords": [
+    "plugin,auth,verdaccio,dynamodb,verdaccio-plugin"
+  ],
+  "bin" : { "gen-pass" : "./src/gen-pass.js" },
+  "license": "MIT",
+  "repository": "pusherman/dynamodb",
+  "author": "Corey Wilson <corey@eastcodes.com>",
+  "scripts": {
+    "release": "standard-version -a -s",
+    "build": "yarn run build:types && yarn run build:js",
+    "build:js": "babel src/ --out-dir lib --extensions \".ts,.tsx\"",
+    "build:types": "tsc --emitDeclarationOnly",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "lint": "eslint \"**/*.{js,ts}\""
+  }
+}
