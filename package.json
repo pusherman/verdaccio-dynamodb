@@ -1,6 +1,6 @@
 {
   "name": "verdaccio-dynamodb",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Verdaccio DynamoDB Auth Plugin",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -25,14 +25,16 @@
     "@verdaccio/types": "^8.5.2",
     "eslint": "^6.6.0",
     "jest": "^24.9.0",
-    "prettier": "^1.19.1",
+    "prettier": "^2.0.5",
     "standard-version": "^7.0.0",
     "typescript": "^3.7.2"
   },
   "keywords": [
     "plugin,auth,verdaccio,dynamodb,verdaccio-plugin"
   ],
-  "bin" : { "gen-pass" : "./src/gen-pass.js" },
+  "bin": {
+    "gen-pass": "./src/gen-pass.js"
+  },
   "license": "MIT",
   "repository": "pusherman/dynamodb",
   "author": "Corey Wilson <corey@eastcodes.com>",
