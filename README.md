@@ -11,7 +11,7 @@
 1. Existing DynamoDB table with a primary partition key of "username" (string)
 2. Existing "users" in the table with the structure below
 
-```
+```json
 {
   "groups": { "L": [{ "S": "admin" } ] },
   "password": { "S": "$2a$10$FZF3...soYgLgS26HWvga" },
@@ -21,7 +21,7 @@
 
 ### Verdaccio Config
 
-```
+```yaml
 plugins: /verdaccio/plugins
 
 auth:
@@ -60,4 +60,13 @@ logs:
 
 ### Generating passwords
 
+A binary is provided to create passwords for the database.  To generate a hash for the password 
+"testing"
 
+`./node_modules/.bin/gen-pass testing`
+
+### Adding users
+
+Currently adding users is not supported.  Verdaccio's support for adding users seems to be in 
+flux currently.  Once that is more stable, I will update the package to support it.  For now,
+you are responsible for adding users to the DynamoDB table.
