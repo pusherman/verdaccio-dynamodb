@@ -67,6 +67,7 @@ A cli is provided to add users and create the initial database.  In order to use
 `yarn run dynamodb-auth create-table --table my-verdaccio-users  --region us-west-1`
 
 `--table` (optional, defaults to "verdaccio-users")
+
 `--region` (optional, defaults to "us-east-1")
 
 ##### Adding users
@@ -74,5 +75,7 @@ A cli is provided to add users and create the initial database.  In order to use
 `yarn run dynamodb-auth add-user alice my-secret-password --groups admin --table my-verdaccio-users`
 
 `--groups` (optional, defaults to "users"
+
 `--table` (optional, defaults to "verdaccio-users")
+
 `--region` (optional, defaults to "us-east-1")
