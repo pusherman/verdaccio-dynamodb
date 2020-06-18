@@ -58,15 +58,21 @@ logs:
   - {type: stdout, format: pretty, level: trace}
 ```
 
-### Generating passwords
+### CLI
 
-A binary is provided to create passwords for the database.  To generate a hash for the password 
-"testing"
+A cli is provided to add users and create the initial database.  In order to use it make sure you can auth with the AWS CLI either by ENVVARS or ` ~/.aws/credential`
 
-`./node_modules/.bin/gen-pass testing`
+##### Create the table
 
-### Adding users
+`yarn run dynamodb-auth create-table --table my-verdaccio-users  --region us-west-1`
 
-Currently adding users is not supported.  Verdaccio's support for adding users seems to be in 
-flux currently.  Once that is more stable, I will update the package to support it.  For now,
-you are responsible for adding users to the DynamoDB table.
+`--table` (optional, defaults to "verdaccio-users")
+`--region` (optional, defaults to "us-east-1")
+
+##### Adding users
+
+`yarn run dynamodb-auth add-user alice my-secret-password --groups admin --table my-verdaccio-users`
+
+`--groups` (optional, defaults to "users"
+`--table` (optional, defaults to "verdaccio-users")
+`--region` (optional, defaults to "us-east-1")
