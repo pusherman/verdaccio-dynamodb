@@ -54,7 +54,7 @@ describe('DB Client', () => {
       Promise.resolve({ TableDescription: { TableName: 'verdaccio-users' } })
     );
 
-    const data = await dynamoClient.createTableIfNeeded();
+    const data = await dynamoClient.createTable();
     expect(data).toBe(dynamoClient.tableName);
   });
 
@@ -63,7 +63,7 @@ describe('DB Client', () => {
       Promise.resolve({ Table: 'not-verdaccio-users' })
     );
 
-    const data = await dynamoClient.createTableIfNeeded();
+    const data = await dynamoClient.createTable();
     expect(data).toBe(dynamoClient.tableName);
   });
 

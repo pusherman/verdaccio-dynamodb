@@ -8,7 +8,7 @@ export class DynamoClient {
 
   private dynamodb: AWS.DynamoDB;
 
-  constructor(config: DynamoDBConfig) {
+  constructor(config: Partial<DynamoDBConfig>) {
     const { region, accessKeyId, secretAccessKey, sessionToken } = config;
     this.tableName = config.tableName;
 
@@ -29,12 +29,7 @@ export class DynamoClient {
       });
   }
 
-  public async createTableIfNeeded(): Promise<string | undefined> {
-    const tableExists = await this.tableExists();
-    if (tableExists) {
-      return Promise.resolve(this.tableName);
-    }
-
+  public async createTable(): Promise<string | undefined> {
     const schema = {
       AttributeDefinitions: [{ AttributeName: 'username', AttributeType: 'S' }],
       KeySchema: [{ AttributeName: 'username', KeyType: 'HASH' }],

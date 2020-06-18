@@ -13,7 +13,8 @@
   "dependencies": {
     "@verdaccio/commons-api": "^8.5.0",
     "aws-sdk": "^2.696.0",
-    "bcrypt": "^5.0.0"
+    "bcrypt": "^5.0.0",
+    "yargs": "^15.3.1"
   },
   "devDependencies": {
     "@types/express": "^4.17.1",
@@ -29,11 +30,9 @@
     "standard-version": "^7.0.0",
     "typescript": "^3.7.2"
   },
-  "keywords": [
-    "plugin,auth,verdaccio,dynamodb,verdaccio-plugin"
-  ],
+  "keywords": ["aws","auth-plugin","verdaccio","dynamodb","verdaccio-plugin"],
   "bin": {
-    "gen-pass": "./src/gen-pass.js"
+    "gen-pass": "./lib/dynamodb-auth.js"
   },
   "license": "MIT",
   "repository": "pusherman/dynamodb",
@@ -43,6 +42,7 @@
     "build": "yarn run build:types && yarn run build:js",
     "build:js": "babel src/ --out-dir lib --extensions \".ts,.tsx\"",
     "build:types": "tsc --emitDeclarationOnly",
+    "build:cli": "babel src/dynamodb-auth.ts --watch --out-dir lib --extensions \".ts,.tsx\"",
     "test": "jest",
     "test:watch": "jest --watch",
     "lint": "eslint \"**/*.{js,ts}\""
