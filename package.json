@@ -1,6 +1,6 @@
 {
   "name": "verdaccio-dynamodb",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Verdaccio DynamoDB Auth Plugin",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -30,7 +30,13 @@
     "standard-version": "^7.0.0",
     "typescript": "^3.7.2"
   },
-  "keywords": ["aws","auth-plugin","verdaccio","dynamodb","verdaccio-plugin"],
+  "keywords": [
+    "aws",
+    "auth-plugin",
+    "verdaccio",
+    "dynamodb",
+    "verdaccio-plugin"
+  ],
   "bin": {
     "gen-pass": "./lib/dynamodb-auth.js"
   },
