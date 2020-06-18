@@ -38,7 +38,7 @@
     "verdaccio-plugin"
   ],
   "bin": {
-    "gen-pass": "./lib/dynamodb-auth.js"
+    "dynamodb-auth": "./lib/dynamodb-auth.js"
   },
   "license": "MIT",
   "repository": "pusherman/dynamodb",
