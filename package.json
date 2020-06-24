@@ -1,6 +1,6 @@
 {
   "name": "verdaccio-dynamodb",
-  "version": "1.1.5",
+  "version": "1.1.8",
   "description": "Verdaccio DynamoDB Auth Plugin",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
